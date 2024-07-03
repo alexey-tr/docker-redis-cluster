@@ -1,5 +1,6 @@
 # Build based on redis:7.2.5 from "2024-05-22T23:17:59Z"
-FROM redis@sha256:e422889e156ebea83856b6ff973bfe0c86bce867d80def228044eeecf925592b
+ARG DIAGEST=sha256:e422889e156ebea83856b6ff973bfe0c86bce867d80def228044eeecf925592b
+FROM redis@$DIGEST
 
 LABEL maintainer="Johan Andersson <Grokzen@gmail.com>"
 
