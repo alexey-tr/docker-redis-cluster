@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker/setup-buildx-action@v1
         with:
-          use: "linux/amd64,linux/arm64"
+          use: true
+          platforms: "linux/amd64,linux/arm64"
       - name: Build the latest Docker image
         run: docker buildx build . --build-arg DIAGEST=sha256:de14eedfbd1fc871d0f5aa1773fd80743930e45354d035b6f3b551e7ffa44df8 --platform=linux/arm64,linux/amd64
